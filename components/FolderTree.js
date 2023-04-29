@@ -20,7 +20,8 @@ const TCTreeItem = styled(TreeItem)(({theme}) => ({
 
 export default function FolderTree(props) {
     const renderTree = (nodes) => (
-        <TCTreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name}>
+        // <TCTreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name}>
+        <TCTreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name.slice(-3) == ".md" ? nodes.name.slice(0, -3) : nodes.name}>
             {Array.isArray(nodes.children)
                 ? nodes.children.map((node) => renderTree(node))
                 : null}
@@ -44,15 +45,19 @@ export default function FolderTree(props) {
                 // console.log(currentNode)
                 if (currentNode != null && currentNode.routePath != null) {
                     router.push(currentNode.routePath)
+                    .then(() => {
+                        router.reload()
+                    })
                     // router.reload()
-                    if (props.onNodeSelect) {
-                        props.onNodeSelect()
-                    }
+
+                    // if (props.onNodeSelect) {
+                    //     props.onNodeSelect()
+                    // }
                 }
             }}
             sx={{flexGrow: 1, maxWidth: 400, overflowY: 'auto'}}
         >
-            {renderTree(props.tree)}
+            { props.tree.children.map((tree) => renderTree(tree)) }
         </TreeView>
     );
 }

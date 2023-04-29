@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "refresh-cache": "mkdir -p public/images && rm -rf public/images/* && cp -r posts/Attachments/* public/images/",
     "dev": "next dev",
     "windev" : "next dev",
     "build": "next build",

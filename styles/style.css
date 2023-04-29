@@ -26,7 +26,6 @@ a:hover {
 /* Foooter section BEGIN */
 .note-footer {
     display: block;
-    background-color: rgba(238, 238, 238, 0.5);
     border-radius: 16px;
     margin-top: 24px;
     padding: 16px;
@@ -105,9 +104,9 @@ a:hover {
 }
 
 .markdown-rendered code {
-    color: #a20000c9;
+    color: #f55454c9;
     font-family: var(--font-monospace);
-    background-color: #f5f2f0;
+    background-color: #282828;
     border-radius: 4px;
     font-size: 0.85em;
     padding: 4px 8px;
@@ -116,24 +115,26 @@ a:hover {
 .nav-bar {
     width: 300px;
     flex: 0 0 300px;
-    position: relative;
+    position: fixed;
+    min-height: 100vh;
     display: flex;
-    background-color: var(--background-primary-alt);
+    /* background-color: var(--background-primary-alt); */
+    background-color: rgba(33, 37, 41, 1);
     border-right: 1px solid var(--background-secondary-alt);
     font-family: var(--default-font);
     font-size: 14px;
     line-height: 1.6;
-    min-height: 0;
+    /* min-height: 0; */
     padding-top: 20px;
     flex-direction: column;
 }
 
 
 .theme-light {
-    --background-primary: white;
-    --background-primary-alt: #f1f4fa;
+    --background-primary: #1a1e21;
+    --background-primary-alt: rgba(33, 37, 41, 1);
     --background-secondary: #f2f3f5;
-    --background-secondary-alt: #e3e5e8;
+    --background-secondary-alt: rgb(17, 19, 22);
     --background-modifier-border: #ddd;
     --background-modifier-form-field: #fff;
     --background-modifier-form-field-highlighted: #fff;
@@ -143,9 +144,9 @@ a:hover {
     --background-modifier-error-rgb: 230, 135, 135;
     --background-modifier-error-hover: #bb0000;
     --background-modifier-cover: rgba(0, 0, 0, 0.8);
-    --text-accent: rgba(201, 19, 133, 0.77);;
-    --text-accent-hover: #1ea2cc;
-    --text-normal: #232324;
+    --text-accent: #ffa14f;
+    --text-accent-hover: #ff7700;
+    --text-normal: #d9d9d9;
     --text-muted: #8e8e90;
     --text-muted-rgb: 136, 136, 136;
     --text-faint: #999999;
@@ -166,6 +167,7 @@ a:hover {
     --scrollbar-thumb-bg: rgba(0, 0, 0, 0.1);
     --highlight-mix-blend-mode: darken;
     --dark: #141021;
+    --orange: #ffa14f;
 }
 
 .markdown-rendered img:not([width]),
@@ -222,7 +224,7 @@ a:hover {
 footer {
     margin-top: 2em;
     text-align: center;
-    background-color: rgb(231, 242, 250);
+    background-color: var(--background-primary-alt);
     border-radius: 8px;
     padding: 4px;
 }
@@ -249,8 +251,8 @@ hr {
     margin: 2em auto;
     height: 2px;
     border-radius: 1px;
-    color: var(--dark);
-    background-color: var(--dark);
+    color: var(--orange);
+    background-color: var(--orange);
 }
 
 
@@ -266,6 +268,10 @@ hr {
 @media screen and (min-width: 800px) {
     .burger-menu {
         display: none;
+    }
+
+    .markdown-rendered {
+        margin-left: 300px;
     }
 }
 
@@ -313,11 +319,11 @@ hr {
         z-index: 100;
         width: 200px;
         height: 200px;
-        background: #FFF;
+        background: #15191c;
         border-radius: 0 0 0 80%;
         -webkit-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
-        box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+        box-shadow: 0 0 0 0 #15191c, 0 0 0 0 #15191c;
         cursor: pointer;
     }
 
@@ -327,7 +333,7 @@ hr {
         left: 50px;
         width: 30px;
         height: 2px;
-        background: #69D2e7;
+        background: var(--orange);
         display: block;
         -webkit-transform-origin: center;
         transform-origin: center;
@@ -344,7 +350,7 @@ hr {
         display: block;
         width: 100%;
         height: 100%;
-        background: #69d2e7;
+        background: var(--orange);
     }
     
     .hamburger:before {

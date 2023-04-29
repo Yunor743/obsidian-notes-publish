@@ -42,6 +42,9 @@ export default function Home({note, backLinks, fileNames, tree, flattenNodes, gr
                     </nav>
                 </div>
                 <nav className="nav-bar">
+                    <a href="https://hugo.perinazzo.com/" style={{paddingLeft: "20px"}}>
+                        <img width="80" height="50" src="../hpLogo.png"></img>
+                    </a>
                     <FolderTree tree={tree} flattenNodes={flattenNodes}/>
                 </nav>
                 <MDContent content={note.data} fileNames={fileNames} handleOpenNewContent={null} backLinks={backLinks}/>

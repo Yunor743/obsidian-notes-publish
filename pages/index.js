@@ -35,6 +35,9 @@ export default function Home({graphData, content, tree, flattenNodes, backLinks}
 
                 </div>
                 <nav className="nav-bar">
+                    <a href="https://hugo.perinazzo.com/" style={{paddingLeft: "20px"}}>
+                        <img width="80" height="50" src="hpLogo.png"></img>
+                    </a>
                     <FolderTree tree={tree} flattenNodes={flattenNodes}/>
                 </nav>
                 <MDContent content={content}  handleOpenNewContent={null} backLinks={backLinks}/>

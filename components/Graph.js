@@ -33,7 +33,7 @@ const layout = {
 const styleSheet = [{
     selector: "node",
     style: {
-        "background-color": "#666",
+        "background-color": "#ff7700",
         "font-size": "12px",
         "width": "20px",
         "height": "20px",
@@ -41,14 +41,17 @@ const styleSheet = [{
     }
 }, {
     selector: "label",
-    style: {"font-size": "12px"},
+    style: {
+        "font-size": "12px",
+        "color":"#d9d9d9"
+    },
 },
     {
         selector: 'edge',
         style: {
             'width': 2,
             "height": 200,
-            'line-color': '#b2b2b2',
+            'line-color': '#ffa14f',
             'target-arrow-color': '#ccc',
             // 'target-arrow-shape': 'triangle',
             'curve-style': 'straight'
@@ -75,8 +78,7 @@ function Graph({graph}) {
                 <h3>Interactive Graph</h3>
                 <div
                     style={{
-                        border: "1px solid #ddd",
-                        backgroundColor: "#f5f6fe",
+                        backgroundColor: "rgba(33,37,41,1)",
                         borderRadius:"8px"
                     }}
                 >
