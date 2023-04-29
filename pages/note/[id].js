@@ -22,10 +22,6 @@ export default function Home({note, backLinks, fileNames, tree, flattenNodes, gr
     const closeBurger = () => {document.getElementById(burgerId).checked = false}
     return (
         <Layout>
-            <Head>
-                {note.title && <meta name="title" content={note.title}/>}
-            </Head>
-
             <div className='container'>
                 <div className="burger-menu">
                     <input type="checkbox" id={burgerId}

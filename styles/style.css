@@ -116,7 +116,9 @@ a:hover {
     width: 300px;
     flex: 0 0 300px;
     position: fixed;
+    overflow: auto;
     min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     /* background-color: var(--background-primary-alt); */
     background-color: rgba(33, 37, 41, 1);
@@ -379,3 +381,24 @@ hr {
     }
 
 }
+
+/* CUSTOM SCROLL-BAR */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #3a3a3a;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #525252;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6e6e6e;
+  }

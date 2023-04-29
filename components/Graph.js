@@ -96,7 +96,7 @@ function Graph({graph}) {
                         cy={cy => {
                             myCyRef = cy;
 
-                            console.log("EVT", cy);
+                            // console.log("EVT", cy);
 
                             cy.on("tap", "node", evt => {
                                 var node = evt.target;

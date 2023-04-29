@@ -41,13 +41,14 @@ export default function FolderTree(props) {
                 const currentNode = props.flattenNodes.find(aNode => {
                     return aNode.id === nodIds
                 })
-                // console.log(event)
-                // console.log(currentNode)
                 if (currentNode != null && currentNode.routePath != null) {
-                    router.push(currentNode.routePath)
-                    .then(() => {
-                        router.reload()
-                    })
+                    // Additional check to ensure it's not a folder containing children
+                    if (currentNode.children == null || currentNode.children.length == 0) {
+                        router.push(currentNode.routePath)
+                        .then(() => {
+                            router.reload()
+                        })
+                    }
                     // router.reload()
 
                     // if (props.onNodeSelect) {
