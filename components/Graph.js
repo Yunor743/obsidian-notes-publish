@@ -78,7 +78,7 @@ function Graph({graph}) {
                 <h3>Interactive Graph</h3>
                 <div
                     style={{
-                        backgroundColor: "rgba(33,37,41,1)",
+                        backgroundColor: "rgba(38,38,38)",
                         borderRadius:"8px"
                     }}
                 >

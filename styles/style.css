@@ -121,7 +121,7 @@ a:hover {
     max-height: 100vh;
     display: flex;
     /* background-color: var(--background-primary-alt); */
-    background-color: rgba(33, 37, 41, 1);
+    background-color: rgb(36, 36, 36);
     border-right: 1px solid var(--background-secondary-alt);
     font-family: var(--default-font);
     font-size: 14px;
@@ -133,7 +133,8 @@ a:hover {
 
 
 .theme-light {
-    --background-primary: #1a1e21;
+    /* --background-primary: #1a1e21; */
+    --background-primary: #1e1e1e;
     --background-primary-alt: rgba(33, 37, 41, 1);
     --background-secondary: #f2f3f5;
     --background-secondary-alt: rgb(17, 19, 22);
@@ -321,7 +322,7 @@ hr {
         z-index: 100;
         width: 200px;
         height: 200px;
-        background: #15191c;
+        background: #1a1a1a;
         border-radius: 0 0 0 80%;
         -webkit-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
