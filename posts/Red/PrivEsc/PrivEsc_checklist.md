@@ -1,0 +1,44 @@
+- [ ] Linux
+	- [ ] Are you in a container ?
+	- [ ] check `sudo -l`
+	- [ ] check existing user
+		- [ ] `cat /etc/passwd | grep -v "false\|nologin"`
+		- [ ] `ls /home`
+	- [ ] check your `groups`
+		- [ ] does one of this groups have some weird read/write permission ?
+		- [ ] are you in the `docker` group ?
+			- [ ] mount `/root` folder in a container
+	- [ ] check `SUID` files
+		- [ ] check on `GTFObin`
+	- [ ] check weird files with read/write permissions out of your user home
+		- [ ] check linux capabilities
+	- [ ] check `/opt`
+	- [ ] check source code of running applications (if you have access to)
+		- [ ] there is some creds ?
+	- [ ] Try to reuse previous gathered credentials
+	- [ ] check connections
+		- [ ] `ss -tulpn`
+	- [ ] check running processes
+		- [ ] run `ps -aux`
+		- [ ] run `pspy32`
+	- [ ] run `linpeas.sh`
+	- [ ] check `bash_history`
+	
+- [ ] Windows
+	TODO
+
+- [ ] Found an intriguing service ?
+	- [ ] Use following keywords in your researchs:
+		- [ ] exploit
+		- [ ] privilege escalation
+		- [ ] Local Privilege escalation (LPE)
+		- [ ] Leverage privileges
+		- [ ] Remote command execution
+	- [ ] msfconsole : search {service}
+	- [ ] searchsploit {service} {version}
+	- [ ] Search on hacktricks:
+	- [ ] Search on google:
+		- [ ] search "{service} exploit"
+		- [ ] search "{service} privilege escalation"
+	- [ ] check github project for security fixes
+	- [ ] check website / blog of the project for security fixes

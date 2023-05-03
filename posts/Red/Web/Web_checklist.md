@@ -1,0 +1,56 @@
+
+- [ ] Scan the web server
+	- [ ] Use `nikto`
+- [ ] Is it supporting HTTPS ?
+	- [ ] Check the certificate
+	- [ ] Automatic HTTP redirection to HTTPS ?
+		- [ ] No ? so pay attention to both service, are they identical ?
+- [ ] find the domain
+	- [ ] browse with a web navigator (firefox)
+	- [ ] query the dns server (if there is one)
+	- [ ] check nmap output
+	- [ ] In the HTTPS certificate
+- [ ] find subdomains (or vhosts)
+	- [x] Use `gobuster` or `wfuzz`
+	- [ ] Use following wordlists:
+		- [x] "DNS/subdomains-top1million-110000.txt"
+		- [ ] "DNS/bitquark-subdomains-top100000.txt"
+- [ ] Foreach domains / subdomains
+	- [ ] Check for interesting files
+		- [ ] robots.txt
+		- [ ] sitemap.xml
+	- [ ] spidering
+		- [ ] use `gospider`
+	- [ ] Force browsing
+		- [ ] Use `feroxbuster (recursive by default)`, `gobuster`, `wfuzz`
+		- [ ] Use following wordlists:
+			- [ ] "Web-Content/directory-list-2.3-big.txt"
+			- [ ] "Web-Content/raft-large-directories.txt"
+			- [ ] "Web-Content/common.txt"
+			- [ ] "Web-Content/big.txt"
+	- [ ] Have you found some forms ?
+		- [ ] Try SQLI (check [[Methodology/Red/Web/sqli]])
+			- [ ] Automatic script
+				- [ ] Use `sqlmap`, `wfuzz`
+			- [ ] Manual check
+				- [ ] Use `burpsuite`
+			- [ ] Is form input reflected in the page ?
+				- [ ] try xss
+				- [ ] try inject php
+				- [ ] try ssti
+		- [ ] Try BruteForce
+			- [ ] Use `hydra`
+			- [ ] Use `wfuzz`
+	- [ ] Foreach pages
+		- [ ] Check HTTP headers with `burpsuite`
+		- [ ] check and brute force http methods
+		- [ ] check post parameters, query string, url path...
+		- [ ] check the network requests
+		- [ ] Foreach POST and UPDATE requests
+			- [ ] try to change the "Content-type", is it still working ?
+				- [ ] yes ? so try some type juggling
+		- [ ] check the source code
+			- [ ] there is a service name ? a version ?
+			- [ ] there is some comment ?
+			- [ ] there is some hidden code ?
+		- [ ] there is some weird headers ? weird cookies ?
