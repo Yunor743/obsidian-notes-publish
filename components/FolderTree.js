@@ -17,6 +17,28 @@ const TCTreeItem = styled(TreeItem)(({theme}) => ({
     },
 }))
 
+function foldersContainingTargetNode(array, node, target_route_path) {
+    if (node.routePath == decodeURIComponent(target_route_path)) {
+        var ret = structuredClone(array)
+        ret.push(node.id)
+        return ret
+    } else if (node.children && node.children.length > 0) {
+        for (let i = 0; i < node.children.length; i++) {
+            const child = node.children[i]
+            var copiedArr = structuredClone(array)
+            var copiedArr = foldersContainingTargetNode(copiedArr, child, target_route_path)
+            if (copiedArr.length != array.length) {
+                copiedArr.push(node.id)
+                return copiedArr
+            }
+        }
+    }
+    return array
+}
+
+function removeDuplicates(arr) {
+    return Array.from(new Set(arr));
+}
 
 export default function FolderTree(props) {
     const renderTree = (nodes) => (
@@ -30,12 +52,27 @@ export default function FolderTree(props) {
 
     const router = useRouter()
     // const childrenNodeIds = props.tree.children.map(aNode => {return aNode.id})
-    const expandedNodes = [props.tree.id]
+
+    //const expandedNodes = [props.tree.id]
+
+    var expandedNodes = []
+    if (router.asPath == "/" && router.route != "/note/[id") {
+        if (props.tree.children && props.tree.children.length > 0) {
+            props.tree.children.forEach(function(child) {
+                expandedNodes.push(child.id)
+            })
+        }
+    }
+    if (router.asPath != "/" && router.route == "/note/[id]") {
+        var expandedNodes = foldersContainingTargetNode(expandedNodes, props.tree, router.asPath)
+    }
+    var uniqExpandedNodes = removeDuplicates(expandedNodes)
+
     return (
         <TreeView
             aria-label="rich object"
             defaultCollapseIcon={<ExpandMoreIcon/>}
-            defaultExpanded={expandedNodes}
+            defaultExpanded={uniqExpandedNodes}
             defaultExpandIcon={<ChevronRightIcon/>}
             onNodeSelect={(event, nodIds) => {
                 const currentNode = props.flattenNodes.find(aNode => {

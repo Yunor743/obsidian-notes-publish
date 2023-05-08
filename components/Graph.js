@@ -104,6 +104,9 @@ function Graph({graph}) {
                                 if (typeof nodeData.id === 'string') {
                                     const path = '/note/' + node.data().id
                                     router.push(path)
+                                    .then(() => {
+                                        router.reload()
+                                    })
                                 }
                             });
                         }}
