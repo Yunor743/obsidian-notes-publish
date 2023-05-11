@@ -2,8 +2,8 @@
 
 git pull &&
 rm graph-data.json
-find posts/ -type f -exec sed -i 's/```sh/```bash/g' {} +
-find posts/ -type f -exec sed -i 's/```shell/```bash/g' {} +
+# find posts/ -type f -exec sed -i 's/```sh/```bash/g' {} +
+# find posts/ -type f -exec sed -i 's/```shell/```bash/g' {} +
 yarn && yarn build &&
 docker compose down &&
 docker compose build &&
