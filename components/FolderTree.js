@@ -56,7 +56,7 @@ export default function FolderTree(props) {
     //const expandedNodes = [props.tree.id]
 
     var expandedNodes = []
-    if (router.asPath == "/" && router.route != "/note/[id") {
+    if ((router.asPath == "/" && router.route != "/note/[id]") || ( router.route == "/note/[id]" && router.asPath == "/note/__index")) {
         if (props.tree.children && props.tree.children.length > 0) {
             props.tree.children.forEach(function(child) {
                 expandedNodes.push(child.id)
