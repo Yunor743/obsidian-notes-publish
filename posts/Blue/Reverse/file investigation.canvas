@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"type":"text","text":"File","id":"4e709b6fbe86167f","x":-480,"y":-100,"width":250,"height":60},
+		{"type":"text","text":"Is executable ? PE32 / ELF / APK","id":"84696bc8e1d8c929","x":-82,"y":-385,"width":250,"height":60},
+		{"type":"text","text":"Meta data analysis","id":"a9019bc62efcd630","x":880,"y":-840,"width":250,"height":60},
+		{"type":"text","text":"Is packed ? check the `entropy` on `DiE`\n- upx : `upx -d`\n- https://www.unpac.me/#/","id":"3fd21264fccc6fd2","x":1340,"y":-860,"width":424,"height":109},
+		{"type":"text","text":"Static analysis\nDynamic analysis\nMeta data analysis\nThreat hunt / Threat OSINT\n\n","id":"3cfe869c4bf71070","x":320,"y":-960,"width":260,"height":120},
+		{"type":"text","text":"What is the development language ?","id":"ade784da7558315a","x":1334,"y":-157,"width":437,"height":50},
+		{"type":"file","file":"Methodology/Blue/Reverse/reversing executable made with pyhon.md","id":"d82a84867fb1c030","x":2080,"y":-332,"width":400,"height":400},
+		{"type":"text","text":"Run in a sandbox\n[tria.ge](https://tria.ge/)","id":"91dfac07bfea1085","x":1340,"y":-970,"width":250,"height":60},
+		{"type":"text","text":"Dynamic analysis","id":"766c1a90be8182b7","x":880,"y":-970,"width":250,"height":60},
+		{"type":"text","text":"Static analysis","id":"cc694d22da61092e","x":880,"y":-1140,"width":250,"height":60},
+		{"type":"text","text":"- DnSpy\n- DotPeek\n- ILSpy","id":"9e832d027d66aa6c","x":2120,"y":100,"width":280,"height":100},
+		{"type":"text","text":"- JADX-GUI","id":"e85493de5e8262ee","x":2120,"y":240,"width":280,"height":80},
+		{"type":"file","file":"Methodology/Blue/Reverse/ReverseEngineering.md","id":"fed7e0c739332918","x":2060,"y":-1340,"width":400,"height":400},
+		{"type":"file","file":"Methodology/Blue/Malware analysis/Unpacking.md","id":"e4c92e5cdf340fb6","x":2580,"y":-860,"width":400,"height":400},
+		{"type":"file","file":"Methodology/Blue/Cheatsheets/Reverse/packedBinaries.md","id":"4596805d7dc642a4","x":2060,"y":-860,"width":400,"height":400},
+		{"type":"text","text":"[[Identify a binary]]\n\n---\n\nDetect It easy\n- https://www.youtube.com/watch?v=FB_e1mIhykk","id":"92f24b127eab50f6","x":1313,"y":-620,"width":467,"height":160},
+		{"type":"text","text":"Tools:\n- Radare2\n- Ghidra\n- IDA\n- strings\n- yara\n- xxd\n- Frida\n\n---\n\nhttps://www.youtube.com/watch?v=M19ZSTAgubI","id":"6ebbfb8a869fda0a","x":1400,"y":-1220,"width":240,"height":160}
+	],
+	"edges":[
+		{"id":"835e4b14411468c9","fromNode":"4e709b6fbe86167f","fromSide":"right","toNode":"84696bc8e1d8c929","toSide":"left"},
+		{"id":"369b80986bad2f7d","fromNode":"84696bc8e1d8c929","fromSide":"right","toNode":"3cfe869c4bf71070","toSide":"left","label":"yes"},
+		{"id":"4b4daa5284f38c08","fromNode":"3cfe869c4bf71070","fromSide":"right","toNode":"a9019bc62efcd630","toSide":"left"},
+		{"id":"80f6e4a31e65495e","fromNode":"a9019bc62efcd630","fromSide":"right","toNode":"3fd21264fccc6fd2","toSide":"left"},
+		{"id":"de7bf49203f5cd9b","fromNode":"a9019bc62efcd630","fromSide":"right","toNode":"92f24b127eab50f6","toSide":"left"},
+		{"id":"6d2172178c745b21","fromNode":"3cfe869c4bf71070","fromSide":"right","toNode":"766c1a90be8182b7","toSide":"left"},
+		{"id":"8f0682e32bd357c4","fromNode":"766c1a90be8182b7","fromSide":"right","toNode":"91dfac07bfea1085","toSide":"left"},
+		{"id":"c9375656c4c50198","fromNode":"3fd21264fccc6fd2","fromSide":"bottom","toNode":"92f24b127eab50f6","toSide":"top"},
+		{"id":"bd1e748881c23db9","fromNode":"3fd21264fccc6fd2","fromSide":"right","toNode":"4596805d7dc642a4","toSide":"left"},
+		{"id":"43db7f4f6ae6a33d","fromNode":"4596805d7dc642a4","fromSide":"right","toNode":"e4c92e5cdf340fb6","toSide":"left"},
+		{"id":"33db9e3b674e8f75","fromNode":"92f24b127eab50f6","fromSide":"bottom","toNode":"ade784da7558315a","toSide":"top"},
+		{"id":"f49bc0bd31a34c32","fromNode":"ade784da7558315a","fromSide":"right","toNode":"d82a84867fb1c030","toSide":"left","label":"python"},
+		{"id":"843447b515318cb2","fromNode":"6ebbfb8a869fda0a","fromSide":"right","toNode":"fed7e0c739332918","toSide":"left"},
+		{"id":"9abeba7e3250bcc0","fromNode":"ade784da7558315a","fromSide":"right","toNode":"fed7e0c739332918","toSide":"left","label":"c / c++"},
+		{"id":"4eaca02dd3281807","fromNode":"3cfe869c4bf71070","fromSide":"right","toNode":"cc694d22da61092e","toSide":"left"},
+		{"id":"51ec6e434e1beb46","fromNode":"cc694d22da61092e","fromSide":"right","toNode":"6ebbfb8a869fda0a","toSide":"left"},
+		{"id":"98a94498711a7036","fromNode":"ade784da7558315a","fromSide":"bottom","toNode":"9e832d027d66aa6c","toSide":"left","label":".NET"},
+		{"id":"4bba13c9f97b65a0","fromNode":"ade784da7558315a","fromSide":"bottom","toNode":"e85493de5e8262ee","toSide":"left","label":"Java / Kotlin"}
+	]
+}
