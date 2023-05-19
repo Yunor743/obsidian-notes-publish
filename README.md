@@ -1,6 +1,8 @@
 
 # Publishing my hacking notes on the internet
 
+Author: Yunor
+
 ## This project is a fork of MindStone, what is MindStone?
 MindStone is a free open-source alternative solution to [Obsidian Publish](https://obsidian.md/publish)
 
